@@ -12,23 +12,40 @@ namespace Jalasoft.DevLevel1.Practice2
         public NameWeapons Name { get; set; }
         protected internal virtual int MagazineSize { get; }
         public string Color { get; set; }
-        public double Range { get; set; }
-        public int Reload { get; set; }
-        public int Bullet { get; set; }
-        public bool CurrentBullet { get; set; }
+        public virtual double Range { get; }
+        public bool NeedsReload { get; set; }
+        public int CurrentBullet { get; set; }
+      
         public double Weight { get; set; }
         public double Size { get; set; }
 
         public virtual void Shoot()
         {
-            if (Bullet == 0)
-                Console.WriteLine("Recharge before to fire ");
-            else
+            if (CurrentBullet > 0)
+            {
                 Console.WriteLine("Boooooommmmmm ");
-                Bullet--;
+                CurrentBullet--;
+            }
+            else
+                Console.WriteLine("Recharge before to fire ");
+        }
+        public void ReLoadFull()
+        {
+            Load(MagazineSize);
+            Console.WriteLine("Reaload completed");
+        }
+        public void ReLoad(int bulletReLoad)
+        {
+            if (bulletReLoad <= MagazineSize)
+                Load(bulletReLoad);
+            else
+                Console.WriteLine("No loaded the capacity for this weapon is:{0}", MagazineSize);
 
         }
-
+        public void Load(int bulletActual) 
+        {
+            CurrentBullet = bulletActual; 
+        }
 
     }
 }

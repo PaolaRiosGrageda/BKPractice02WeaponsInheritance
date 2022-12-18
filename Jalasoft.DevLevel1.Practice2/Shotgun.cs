@@ -15,8 +15,15 @@ namespace Jalasoft.DevLevel1.Practice2
                 return 2;
             }
         }
-        
-                  
+        public override double Range
+        {
+            get
+            {
+                return 5;
+            }
+        }
+
+
 
 
     }

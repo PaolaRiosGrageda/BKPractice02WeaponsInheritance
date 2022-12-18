@@ -8,6 +8,9 @@ weaponSGun1.Name = NameWeapons.Shotgun;
 Console.WriteLine(weaponSGun1.Name);
 int magazineWeaponSGun1 = weaponSGun1.MagazineSize;
 Console.WriteLine("The Shotgun has size magazine : {0}", magazineWeaponSGun1);
+weaponSGun1.Shoot(); 
+
+
 
 // Sniper Rifle
 Weapon weaponSniperRifle1= new SniperRifle();

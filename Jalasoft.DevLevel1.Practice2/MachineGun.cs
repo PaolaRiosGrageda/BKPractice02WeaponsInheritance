@@ -15,14 +15,21 @@ namespace Jalasoft.DevLevel1.Practice2
                 return 20;
             }
         }
-        public override void Shoot()
+        public void ShootAutomatic()
         {
-            while (Bullet > 0)
+            while (CurrentBullet > 0)
             {
                 Console.WriteLine("Taaa  ");
-                Bullet--;
+                CurrentBullet--;
             }
             Console.WriteLine("The Bullets ran out");
+        }
+        public override double Range
+        {
+            get
+            {
+                return 16;
+            }
         }
     }
 }
