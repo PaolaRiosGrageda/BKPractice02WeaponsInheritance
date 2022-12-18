@@ -25,9 +25,10 @@ namespace Jalasoft.DevLevel1.Practice2
             {
                 Console.WriteLine("Boooooommmmmm ");
                 CurrentBullet--;
+                Recharge();
             }
             else
-                Console.WriteLine("Recharge before to fire ");
+                Console.WriteLine("Recharge because the weapon has no bullets  ");
         }
         public void ReLoadFull()
         {
@@ -45,6 +46,13 @@ namespace Jalasoft.DevLevel1.Practice2
         public void Load(int bulletActual) 
         {
             CurrentBullet = bulletActual; 
+        }
+        public void Recharge()
+        {
+            if (CurrentBullet == 0)
+                Console.WriteLine("The weapon doesn't have bullets");
+           else
+            Console.WriteLine("Weapon is recharging the weapon is ready to shoot again");
         }
 
     }

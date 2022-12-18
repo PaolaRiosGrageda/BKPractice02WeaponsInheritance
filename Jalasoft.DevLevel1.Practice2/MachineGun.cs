@@ -15,7 +15,7 @@ namespace Jalasoft.DevLevel1.Practice2
                 return 20;
             }
         }
-        public void ShootAutomatic()
+        public override void Shoot()
         {
             while (CurrentBullet > 0)
             {
